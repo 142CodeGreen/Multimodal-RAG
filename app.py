@@ -22,8 +22,8 @@ from llama_index.vector_stores.milvus import MilvusVectorStore
 from llama_index.embeddings.nvidia import NVIDIAEmbedding
 from llama_index.llms.nvidia import NVIDIA
 
-from utils import set_environment_variables
 from document_processors import load_multimodal_data, load_data_from_directory
+from utils import set_environment_variables
 
 # Set up the page configuration
 st.set_page_config(layout="wide")
