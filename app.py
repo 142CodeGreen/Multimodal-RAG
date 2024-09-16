@@ -31,7 +31,7 @@ st.set_page_config(layout="wide")
 # Initialize settings
 def initialize_settings():
     Settings.embed_model = NVIDIAEmbedding(model="nvidia/nv-embedqa-e5-v5", truncate="END")
-    Settings.llm = NVIDIA(model="meta/llama-3.1-8b-instruct
+    Settings.llm = NVIDIA(model="meta/llama-3.1-8b-instruct"
 ")
     Settings.text_splitter = SentenceSplitter(chunk_size=400)
 
