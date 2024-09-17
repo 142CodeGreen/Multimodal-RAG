@@ -31,9 +31,8 @@ st.set_page_config(layout="wide")
 # Initialize settings
 def initialize_settings():
     Settings.embed_model = NVIDIAEmbedding(model="nvidia/nv-embedqa-e5-v5", truncate="END")
-    Settings.llm = NVIDIA(model="meta/llama-3.1-405b-instruct"
-")
-    Settings.text_splitter = SentenceSplitter(chunk_size=500)
+    Settings.llm = NVIDIA(model="meta/llama-3.1-8b-instruct")
+    Settings.text_splitter = SentenceSplitter(chunk_size=600)
 
 # Create index from documents
 def create_index(documents):
