@@ -23,7 +23,7 @@ from llama_index.llms.nvidia import NVIDIA
 
 def set_environment_variables():
     """Set necessary environment variables."""
-    os.environ["NVIDIA_API_KEY"] = "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" #set API key
+    os.environ["NVIDIA_API_KEY"] = "" #set API key
 
 def get_b64_image_from_content(image_content):
     """Convert image content to base64 encoded string."""
@@ -42,7 +42,7 @@ def is_graph(image_content):
 def process_graph(image_content):
     """Process a graph image and generate a description."""
     deplot_description = process_graph_deplot(image_content)
-    mixtral = NVIDIA(model_name="meta/llama-3.1-405b-instruct")
+    mixtral = NVIDIA(model_name="meta/llama-3.1-70b-instruct")
     response = mixtral.complete("Your responsibility is to explain charts. You are an expert in describing the responses of linearized tables into plain English text for LLMs to use. Explain the following linearized table. " + deplot_description)
     return response.text
 
