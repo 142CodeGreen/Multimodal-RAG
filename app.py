@@ -35,12 +35,16 @@ def initialize_settings():
     Settings.text_splitter = SentenceSplitter(chunk_size=600)
 
 # Create index from documents
+
 def create_index(documents):
     vector_store = MilvusVectorStore(
             host = "127.0.0.1",
             port = 19530,
             dim = 1024
+            collection_name="your_collection_name",
+            gpu_id=0  # Specify the GPU ID to use
     )
+
     # vector_store = MilvusVectorStore(uri="./milvus_demo.db", dim=1024, overwrite=True) #For CPU only vector store
     storage_context = StorageContext.from_defaults(vector_store=vector_store)
     return VectorStoreIndex.from_documents(documents, storage_context=storage_context)
