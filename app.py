@@ -39,7 +39,7 @@ def create_index(documents):
             host = "127.0.0.1",
             port = 19530,
             dim = 1024
-            collection_name="your_collection_name",
+            collection_name="vectorstore",
             gpu_id=0  # Specify the GPU ID to use
     )
 
