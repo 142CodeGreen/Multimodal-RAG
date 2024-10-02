@@ -21,6 +21,7 @@ from llama_index.core.node_parser import SentenceSplitter
 from llama_index.vector_stores.milvus import MilvusVectorStore
 from llama_index.embeddings.nvidia import NVIDIAEmbedding
 from llama_index.llms.nvidia import NVIDIA
+
 from document_processors import load_multimodal_data, load_data_from_directory
 from utils import set_environment_variables
 
@@ -29,20 +30,20 @@ st.set_page_config(layout="wide")
 
 # Initialize settings
 def initialize_settings():
-    Settings.embed_model = NVIDIAEmbedding(model="NV-Embed-QA", truncate="END")
-    Settings.llm = NVIDIA(model="meta/lama-3.1-8b-instruct")
+    Settings.embed_model = NVIDIAEmbedding(model="nvidia/nv-embedqa-e5-v5", truncate="END")
+    Settings.llm = NVIDIA(model="meta / llama-3.1-8b-instruct")
     Settings.text_splitter = SentenceSplitter(chunk_size=500)
 
 # Create index from documents
 def create_index(documents):
     vector_store = MilvusVectorStore(
-            host = "127.0.0.1",
-            port = 19530,
-            dim = 1024
+            host="127.0.0.1",
+            port=19530,
+            dim=1024,
             collection_name="vectorstore",
             gpu_id=0  # Specify the GPU ID to use
+            output_fields=["field1","field2"]
     )
-
     # vector_store = MilvusVectorStore(uri="./milvus_demo.db", dim=1024, overwrite=True) #For CPU only vector store
     storage_context = StorageContext.from_defaults(vector_store=vector_store)
     return VectorStoreIndex.from_documents(documents, storage_context=storage_context)
