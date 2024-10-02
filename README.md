@@ -18,8 +18,8 @@ The system utilizes LlamaIndex for efficient indexing and retrieval of informati
 
 1. Clone the repository:
 ```
-git clone https://github.com/142CodeGreen/NVIDIA-Multimodal-RAGPRACTICE.git
-cd NVIDIA-Multimodal-RAGPRACTICE
+git clone https://github.com/142CodeGreen/Multimodal-RAG.git
+cd Multimodal-RAG
 ```
 
 2. (Optional) Create a conda environment or a virtual environment:
