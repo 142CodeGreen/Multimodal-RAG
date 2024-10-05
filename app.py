@@ -15,6 +15,8 @@
 
 import os
 import streamlit as st
+import pandas as pd #panda dataframe
+import numpy as np  #numpy arrays
 from llama_index.core import Settings
 from llama_index.core import VectorStoreIndex, StorageContext
 from llama_index.core.node_parser import SentenceSplitter
