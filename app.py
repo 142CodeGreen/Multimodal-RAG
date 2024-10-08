@@ -43,7 +43,7 @@ def create_index(documents):
             port=19530,
             dim=1024,
             collection_name="vectorstore",
-            gpu_id=0  # Specify the GPU ID to use
+            gpu_id=0,  # Specify the GPU ID to use
             output_fields=["field1","field2"]
     )
     # vector_store = MilvusVectorStore(uri="./milvus_demo.db", dim=1024, overwrite=True) #For CPU only vector store
