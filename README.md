@@ -1,3 +1,15 @@
+---
+title: Multimodal RAG Testing
+emoji: 📈
+colorFrom: purple
+colorTo: green
+sdk: streamlit
+sdk_version: 1.39.0
+app_file: app.py
+pinned: false
+---
+
+
 # Practice of NVIDIA Creating Multimodal AI Agent for Enhanced Content Understanding
 
 ## Overview
